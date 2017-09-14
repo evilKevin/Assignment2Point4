@@ -1,4 +1,13 @@
-﻿using System;
+﻿/*
+ * Filename: Assignmnet2Point4
+ * Name = Kyle Smeaton, Connor Flaherty
+ * Dates = 2017-09-12 to 2017-09-14
+ * Course = CWEB2020 Advanced Programming
+ * Assignment Name = Assignment 2 (Chapters 4 & 5)
+ */
+
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -69,24 +78,27 @@ namespace Assignment2Point4
                             WriteLine("Score entry is quitting");
                             WriteLine("Score is {0}", subTotal);
                         }
-                        if ((intScore < 0) || (intScore > 100))
+                        if ((intScore < 0) || (intScore > 100) && (intScore == -1))
                         {
                             WriteLine(outOfRange, intScore);
+                            intScore = 0;
                         }
                         if ((intScore >= 0) && (intScore <= 100))
                         {
                             subTotal = subTotal + intScore;
-                            intScore = 0;
+                            intScore = -1;
                         }
 
                     }
-                    while ((intScore < 0) || (intScore > 100));
+                    while ((intScore < 0) || (intScore > 100) && (intScore == -1));
                 }
                 if (result == 2)
                 {
-
+                    // temp
+                    WriteLine("if == 2 is being called.");
                 }
-                  
+                //debug
+                WriteLine("\n\nresult @ bottom of do is {0}\n\n", result);
             }
             while (result != 3);
         }
