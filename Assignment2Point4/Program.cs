@@ -124,18 +124,23 @@ namespace Assignment2Point4
                     // keep asking for valid input until validIn flag is tripped.
                     do
                     {
-                        Write("\nHow many items from 1 - 10 did {0} order? ", compName);
-                        strCount = ReadLine();
-
+                        
                         // convert to integer. if Exception is thrown, scold the user.
                         try 
                         {
-                            intCount = Convert.ToInt32(strCount);
-                            validIn = true;
+                            do
+                            {
+                                Write("\nHow many items from 1 - 10 did {0} order? ", compName);
+                                strCount = ReadLine();
+                                intCount = Convert.ToInt32(strCount);
+                                validIn = true;
+                            }
+                            while ((intCount > 10) || (intCount < 0));
                         }
                         catch (Exception)
                         {
                             WriteLine("Enter a whole number please.\n");
+                            validIn = false;
                         }
 
                     }
