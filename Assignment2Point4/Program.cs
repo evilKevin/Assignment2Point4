@@ -26,7 +26,7 @@ namespace Assignment2Point4
             do
             {
                 //debug
-                WriteLine("\n\nresult @ top of do is {0}\n\n", result);
+                //WriteLine("\n\nresult @ top of do is {0}\n\n", result);
 
                 WriteLine("Enter 1, 2, or 3 to select your option, then press Enter: \n1. Calculate sum of scores\n2. Enter customer purchases\n3. Quit");
                 input = ReadLine();
@@ -50,7 +50,7 @@ namespace Assignment2Point4
                 }
 
                 //debug
-                WriteLine("\n\nresult above top of if is {0}\n\n", result);
+                //WriteLine("\n\nresult above top of if is {0}\n\n", result);
 
                 if (result == 1)
                 {
@@ -73,19 +73,19 @@ namespace Assignment2Point4
                         catch (FormatException)
                         {
                             WriteLine("Score entry is quitting");
-                            WriteLine("Score is {0}", subTotal);
+                            WriteLine("Score is {0}\n\n", subTotal);
                             quit = true;
                         }
                         catch (Exception)
                         {
                             WriteLine("Score entry is quitting");
-                            WriteLine("Score is {0}", subTotal);
+                            WriteLine("Score is {0}\n\n", subTotal);
                             quit = true;
                         }
 
                         //debugging
-                        WriteLine("\nintScore is {0}\n", intScore);
-                        WriteLine("\nquit is {0}\n", quit);
+                        //WriteLine("\nintScore is {0}\n", intScore);
+                        //WriteLine("\nquit is {0}\n", quit);
 
                         if ((intScore < 0) || (intScore > 100) && (quit == false))
                         {
@@ -110,7 +110,7 @@ namespace Assignment2Point4
                     WriteLine("if == 2 is being called.");
                 }
                 //debug
-                WriteLine("\n\nresult @ bottom of do is {0}\n\n", result);
+                //WriteLine("\n\nresult @ bottom of do is {0}\n\n", result);
             }
             while (result != 3);
         }
