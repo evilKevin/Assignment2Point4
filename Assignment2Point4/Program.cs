@@ -2,7 +2,7 @@
  * Filename: Assignmnet2Point4
  * Name = Kyle Smeaton, Connor Flaherty
  * Dates = 2017-09-12 to 2017-09-14
- * Course = CWEB2020 Advanced Programming
+ * Course = Advanced Programming
  * Assignment Name = Assignment 2 (Chapters 4 & 5)
  */
 
@@ -59,6 +59,7 @@ namespace Assignment2Point4
                     int subTotal = 0;
                     string instructMsg = "\nEnter a whole-number score between 0 and 100, or anything else to quit: ";
                     string outOfRange = "\n{0} does not fall between 0 and 100. Re-enter score.\n";
+                    bool quit = false;
 
                     do
                     {
@@ -78,7 +79,7 @@ namespace Assignment2Point4
                             WriteLine("Score entry is quitting");
                             WriteLine("Score is {0}", subTotal);
                         }
-                        if ((intScore < 0) || (intScore > 100) && (intScore == -1))
+                        if ((intScore < 0) || (intScore > 100) && (!quit))
                         {
                             WriteLine(outOfRange, intScore);
                             intScore = 0;
@@ -90,8 +91,10 @@ namespace Assignment2Point4
                         }
 
                     }
-                    while ((intScore < 0) || (intScore > 100) && (intScore == -1));
-                }
+                    while ((intScore < 0) || (intScore > 100) && (!quit));
+                    }
+                    
+                    
                 if (result == 2)
                 {
                     // temp
