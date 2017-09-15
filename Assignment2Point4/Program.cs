@@ -63,6 +63,7 @@ namespace Assignment2Point4
 
                     do
                     {
+
                         Write(instructMsg);
                         strScore = ReadLine();
                         try
@@ -73,26 +74,34 @@ namespace Assignment2Point4
                         {
                             WriteLine("Score entry is quitting");
                             WriteLine("Score is {0}", subTotal);
+                            quit = true;
                         }
                         catch (Exception)
                         {
                             WriteLine("Score entry is quitting");
                             WriteLine("Score is {0}", subTotal);
+                            quit = true;
                         }
-                        if ((intScore < 0) || (intScore > 100) && (!quit))
+
+                        //debugging
+                        WriteLine("\nintScore is {0}\n", intScore);
+                        WriteLine("\nquit is {0}\n", quit);
+
+                        if ((intScore < 0) || (intScore > 100) && (quit == false))
                         {
                             WriteLine(outOfRange, intScore);
                             intScore = 0;
                         }
-                        if ((intScore >= 0) && (intScore <= 100))
+                        if ((intScore >= 0) && (intScore <= 100) && (quit == false))
                         {
                             subTotal = subTotal + intScore;
-                            intScore = -1;
+                            // intScore = -1;
                         }
 
                     }
-                    while ((intScore < 0) || (intScore > 100) && (!quit));
-                    }
+                    while (quit == false);
+                    // while ((intScore < 0) || (intScore > 100) && (quit == false));
+                }
                     
                     
                 if (result == 2)
