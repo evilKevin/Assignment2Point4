@@ -52,8 +52,9 @@ namespace Assignment2Point4
                 }
 
                 //debug
-                WriteLine("\n\nresult above top of if is {0}\n\n", result);
+                //WriteLine("\n\nresult above top of if is {0}\n\n", result);
 
+                // if the user entered 1...
                 if (result == 1)
                 {
                     string strScore;
@@ -76,13 +77,13 @@ namespace Assignment2Point4
                         }
                         catch (FormatException)
                         {
-                            WriteLine("Score entry is quitting");
+                            WriteLine("\nScore entry is quitting");
                             WriteLine("Score is {0}\n\n", subTotal);
                             quit = true;
                         }
                         catch (Exception)
                         {
-                            WriteLine("Score entry is quitting");
+                            WriteLine("\nScore entry is quitting");
                             WriteLine("Score is {0}\n\n", subTotal);
                             quit = true;
                         }
@@ -104,14 +105,12 @@ namespace Assignment2Point4
 
                     }
                     while (quit == false);
-                    // while ((intScore < 0) || (intScore > 100) && (quit == false));
                 }
                     
-                    
+                // if the user entered 2...
                 if (result == 2)
                 {
-                    // temp
-                    // WriteLine("if == 2 is being called.");
+
                     string compName;
                     string strCount;
                     int intCount = 0;
@@ -121,13 +120,14 @@ namespace Assignment2Point4
 
                     Write("\nWhat is the company name? ");
                     compName = ReadLine();
-
                     
-
+                    // keep asking for valid input until validIn flag is tripped.
                     do
                     {
-                        Write("How many items from 1 - 10 did {0} order? ", compName);
+                        Write("\nHow many items from 1 - 10 did {0} order? ", compName);
                         strCount = ReadLine();
+
+                        // convert to integer. if Exception is thrown, scold the user.
                         try 
                         {
                             intCount = Convert.ToInt32(strCount);
@@ -141,6 +141,7 @@ namespace Assignment2Point4
                     }
                     while (validIn == false);
 
+                    // data-entry/display for loop
                     for (int i = 0; i < intCount; i++)
                     {
                         string model;
@@ -148,17 +149,17 @@ namespace Assignment2Point4
                         string department;
 
                         // get the data
-                        WriteLine("What is item {0}'s model number? ", (i + 1));
+                        Write("\nWhat is item {0}'s model number? ", (i + 1));
                         model = ReadLine();
 
-                        WriteLine("What is the item {0}'s description? ", (i + 1));
+                        Write("\nWhat is the item {0}'s description? ", (i + 1));
                         description = ReadLine();
 
-                        WriteLine("For which department is the item {0} intended? ", (i + 1));
+                        Write("\nFor which department is the item {0} intended? ", (i + 1));
                         department = ReadLine();
 
                         // display the data
-                        WriteLine("Item: {0}    Description:     {1}     Model:      {2}     Department:     {3}\n", (i + 1), description, model, department);
+                        WriteLine("\nItem: {0}    Description:     {1}     Model:      {2}     Department:     {3}\n", (i + 1), description, model, department);
 
                     }
 
@@ -166,6 +167,8 @@ namespace Assignment2Point4
                 //debug
                 //WriteLine("\n\nresult @ bottom of do is {0}\n\n", result);
             }
+            // do everything while the result of the input conversion is not 3
+            // if it is 3, it will quit, as there are no further instructions.
             while (result != 3);
         }
     }
