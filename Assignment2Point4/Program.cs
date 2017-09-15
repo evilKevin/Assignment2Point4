@@ -41,10 +41,11 @@ namespace Assignment2Point4
                 }
                 catch (Exception)
                 {
-                    WriteLine("PLACEHOLDER - enter selection again");
+                    WriteLine("Invalid: enter selection again\n");
                     choice = ReadLine();
                     result = -1;
                 }
+                // if the result is not 1, 2, 3, or -1 (which just forces the loop again), scold the user.
                 if ((result != -1) && (result != 1) && (result != 2) && (result != 3))
                 {
                     WriteLine("\n{0} is an incorrect choice. Enter 1, 2, or 3. \n", result);
@@ -60,6 +61,8 @@ namespace Assignment2Point4
                     int subTotal = 0;
                     string instructMsg = "\nEnter a whole-number score between 0 and 100, or anything else to quit: ";
                     string outOfRange = "\n{0} does not fall between 0 and 100. Re-enter score.\n";
+
+                    // do I want to quit the loop?
                     bool quit = false;
 
                     do
@@ -111,7 +114,9 @@ namespace Assignment2Point4
                     // WriteLine("if == 2 is being called.");
                     string compName;
                     string strCount;
-                    int intCount;
+                    int intCount = 0;
+
+                    // is the input valid?
                     bool validIn = false;
 
                     Write("\nWhat is the company name? ");
@@ -142,6 +147,18 @@ namespace Assignment2Point4
                         string description;
                         string department;
 
+                        // get the data
+                        WriteLine("What is item {0}'s model number? ", (i + 1));
+                        model = ReadLine();
+
+                        WriteLine("What is the item {0}'s description? ", (i + 1));
+                        description = ReadLine();
+
+                        WriteLine("For which department is the item {0} intended? ", (i + 1));
+                        department = ReadLine();
+
+                        // display the data
+                        WriteLine("Item: {0}    Description:     {1}     Model:      {2}     Department:     {3}\n", (i + 1), description, model, department);
 
                     }
 
